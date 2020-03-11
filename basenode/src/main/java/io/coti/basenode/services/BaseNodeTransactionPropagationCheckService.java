@@ -45,7 +45,7 @@ public class BaseNodeTransactionPropagationCheckService implements ITransactionP
     }
 
     @Override
-    public void updateRecoveredUnconfirmedReceivedTransactions() {
+    public void recoverUnconfirmedReceivedTransactions() {
         List<Hash> confirmedReceiptTransactions = new ArrayList<>();
         unconfirmedReceivedTransactionHashes.forEach(unconfirmedReceivedTransactionHashData -> {
             Hash transactionHash = unconfirmedReceivedTransactionHashData.getTransactionHash();
