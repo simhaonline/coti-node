@@ -147,9 +147,10 @@ public class BaseNodeTransactionService implements ITransactionService {
                 }
                 return;
             }
+
             if (!validationService.validateBalancesAndAddToPreBalance(transactionData)) {
+                transactionData.setValid(false);
                 log.error("Balance check failed: {}", transactionData.getHash());
-                return;
             }
             transactionHelper.attachTransactionToCluster(transactionData);
             transactionHelper.setTransactionStateToSaved(transactionData);
