@@ -23,11 +23,15 @@ public interface IConfirmationService {
 
     void setDspc(DspConsensusResult dspConsensusResult);
 
-    long getTotalConfirmed();
+    void setDspConsensus(DspConsensusResult dspConsensusResult);
+
+    long getTotalConsensus();
 
     long getTrustChainConfirmed();
 
     long getDspConfirmed();
+
+    long getDspRejected();
 
     void shutdown();
 }
